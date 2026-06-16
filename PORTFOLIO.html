@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame di Stato 2026 | Portfolio Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at 80% 20%, #fafafa, #f4f4f5, #e4e4e7);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* ── Barra di scorrimento personalizzata ── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(24, 24, 27, 0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(24, 24, 27, 0.2); }
+
+        .skill-bar { width: 0; transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+        /* ── Animazioni di Transizione Fluida ── */
+        @keyframes smoothFadeSlide {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tab-in { animation: smoothFadeSlide 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+
+        /* ── VETROMORFISMO OTTIMIZZATO (Nitido e Antialiased) ── */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(12px) saturate(130%);
+            -webkit-backdrop-filter: blur(12px) saturate(130%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 20px -10px rgba(24, 24, 27, 0.03);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        background-color 0.3s ease;
+            will-change: transform, box-shadow;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Hover unico 2D super nitido e profondo */
+        .glass-card:hover {
+            transform: translateY(-5px) scale(1.005);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(24, 24, 27, 0.08);
+            box-shadow: 0 20px 35px -15px rgba(24, 24, 27, 0.08);
+        }
+
+        .active-btn {
+            background: #18181b !important;
+            color: #ffffff !important;
+            box-shadow: 0 8px 20px -6px rgba(24, 24, 27, 0.2);
+        }
+
+        .active-sub-btn {
+            background: rgba(24, 24, 27, 0.08) !important;
+            color: #18181b !important;
+            font-weight: 700;
+        }
+
+        /* Sfondi sfumati statici/fluidi ma leggeri */
+        .parallax-bg{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+        .blob{position:absolute;border-radius:999px;filter:blur(100px);opacity:.18;transition:transform 0.8s ease-out}
+        .blob:nth-child(1){width:500px;height:500px;background:#6366f1;top:-100px;right:-100px}
+        .blob:nth-child(2){width:400px;height:400px;background:#06b6d4;bottom:-100px;left:-100px}
+        .blob:nth-child(3){width:350px;height:350px;background:#8b5cf6;top:40%;left:40%}
+        
+        .reveal{opacity:0;transform:translateY(15px);transition: opacity .5s ease, transform .5s ease}
+        .reveal.show{opacity:1;transform:none}
+        
+        .hero-title {
+            background: linear-gradient(90deg,#18181b,#4f46e5,#06b6d4,#18181b);
+            background-size: 300% auto;
+            -webkit-background-clip: text; color: transparent;
+            animation: aurora 8s linear infinite;
+        }
+        @keyframes aurora{to{background-position:300% center}}
+    </style>
+</head>
+<body class="text-zinc-800 min-h-screen flex flex-col md:flex-row antialiased p-3 md:p-4 gap-4">
+
+    <div class="parallax-bg">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <aside class="w-full md:w-64 lg:w-72 bg-white/40 backdrop-blur-xl border border-white/60 p-5 flex flex-col justify-between shrink-0 rounded-3xl md:sticky md:top-4 md:h-[calc(100vh-2rem)] overflow-y-auto shadow-sm">
+        <div>
+            <div class="mb-6 p-4 bg-white/80 rounded-2xl border border-white/80 shadow-[0_4px_12px_-5px_rgba(0,0,0,0.03)]">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-zinc-900 rounded-xl flex items-center justify-center shrink-0 shadow-sm">
+                        <i class="fa-solid fa-terminal text-white text-xs"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xs font-bold text-zinc-900 tracking-tight leading-tight">Esame di Stato 2026</h1>
+                        <p class="text-[10px] text-zinc-400 mt-0.5 font-medium">Portfolio Competenze</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-[9px] text-zinc-400 uppercase tracking-widest font-bold mb-3 px-1.5">Percorso Multidisciplinare</p>
+            <nav class="space-y-1">
+                <button onclick="switchTab('curriculum')" id="btn-curriculum"
+                    class="tab-btn active-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
+                    <i class="fa-solid fa-user-graduate text-[12px]"></i>
+                    <span>Profilo Formativo</span>
+                </button>
+                
+                <button onclick="switchTab('discipline')" id="btn-discipline"
+                    class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
+                    <i class="fa-solid fa-cubes text-[12px]"></i>
+                    <span>Le 4 Discipline Core</span>
+                </button>
+
+                <button onclick="switchTab('sicurezza')" id="btn-sicurezza"
+                    class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
+                    <i class="fa-solid fa-shield-halved text-[12px]"></i>
+                    <span>Sicurezza Laboratori</span>
+                </button>
+
+                <button onclick="switchTab('civica')" id="btn-civica"
+                    class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
+                    <i class="fa-solid fa-leaf text-[12px]"></i>
+                    <span>Educazione Civica</span>
+                </button>
+
+                <button onclick="switchTab('orientamento')" id="btn-orientamento"
+                    class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
+                    <i class="fa-solid fa-compass text-[12px]"></i>
+                    <span>Sviluppo Post-Diploma</span>
+                </button>
+
+                <button onclick="switchTab('ollama')" id="btn-ollama"
+                    class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
+                    <i class="fa-solid fa-brain text-[12px]"></i>
+                    <span>Integrazione AI (Ollama)</span>
+                </button>
+            </nav>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-zinc-200/50 space-y-0.5 px-1">
+            <p class="text-[11px] text-zinc-800 font-bold">I.I.S. Don Geremia Piscopo</p>
+            <p class="text-[10px] text-zinc-400 font-medium">A.S. 2025/2026 · Informatica</p>
+        </div>
+    </aside>
+
+    <main class="flex-1 bg-white/20 backdrop-blur-xl border border-white/40 rounded-3xl p-5 md:p-8 overflow-y-auto md:h-[calc(100vh-2rem)] shadow-sm">
+
+        <section id="sec-curriculum" class="tab-content space-y-6">
+            <div class="pb-2">
+                <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
+                    Profilo Studente
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950 hero-title">Curriculum &amp; Mappa delle Competenze</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+                <div class="lg:col-span-2 glass-card p-6 rounded-3xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-900 rounded-2xl flex items-center justify-center shadow-sm">
+                            <i class="fa-solid fa-user-graduate text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-zinc-900 leading-tight">Candidato Diplomando</h3>
+                            <p class="text-[10px] text-zinc-400 mt-0.5 font-medium">Indirizzo: Informatica e Telecomunicazioni</p>
+                        </div>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium">
+                            Sintesi del percorso scolastico incentrato sullo studio degli algoritmi, lo sviluppo di software applicativi, la gestione di reti locali e la progettazione di database relazionali nel corso del triennio specialistico.
+                        </p>
+                    </div>
+                    <div class="space-y-2 pt-4 border-t border-zinc-200/60 text-[10px] font-semibold text-zinc-500">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-code text-zinc-400"></i>Programmazione e Logica Algoritmica</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-database text-zinc-400"></i>Progettazione Basi di Dati (SQL)</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-network-wired text-zinc-400"></i>Reti Locali e Protocolli Internet</div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 glass-card p-6 rounded-3xl space-y-5 justify-center flex flex-col">
+                    <h3 class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">Padronanza delle Aree di Studio</h3>
+
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs font-semibold text-zinc-700">
+                            <span>Sviluppo Software &amp; Algoritmi (Informatica)</span>
+                            <span class="text-zinc-400 text-[10px]">85%</span>
+                        </div>
+                        <div class="w-full bg-zinc-200/40 h-2 rounded-full overflow-hidden p-[2px]">
+                            <div class="skill-bar h-full rounded-full bg-zinc-900" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs font-semibold text-zinc-700">
+                            <span>Reti, Sistemi e Configurazione Servizi (Sistemi)</span>
+                            <span class="text-zinc-400 text-[10px]">80%</span>
+                        </div>
+                        <div class="w-full bg-zinc-200/40 h-2 rounded-full overflow-hidden p-[2px]">
+                            <div class="skill-bar h-full rounded-full bg-zinc-900" data-width="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs font-semibold text-zinc-700">
+                            <span>Progettazione e Sviluppo Web (TPSIT)</span>
+                            <span class="text-zinc-400 text-[10px]">75%</span>
+                        </div>
+                        <div class="w-full bg-zinc-200/40 h-2 rounded-full overflow-hidden p-[2px]">
+                            <div class="skill-bar h-full rounded-full bg-zinc-900" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl max-w-md mx-auto flex flex-col items-center">
+                <h3 class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-4">Bilanciamento Competenze (Radar)</h3>
+                <div class="h-52 w-full flex items-center justify-center">
+                    <canvas id="skillChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-discipline" class="tab-content hidden space-y-6">
+            <div class="pb-2">
+                <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
+                    Competenze di Indirizzo
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Integrazione delle 4 Discipline</h2>
+            </div>
+
+            <div class="flex flex-wrap gap-2 p-1.5 bg-white/50 backdrop-blur-md rounded-2xl border border-white/80 max-w-2xl">
+                <button onclick="switchSubCategory('all')" id="sub-btn-all" class="sub-tab-btn active-sub-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-all">
+                    Tutte le Materie
+                </button>
+                <button onclick="switchSubCategory('sistemi')" id="sub-btn-sistemi" class="sub-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-all">
+                    D1 · Sistemi e Reti
+                </button>
+                <button onclick="switchSubCategory('informatica')" id="sub-btn-informatica" class="sub-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-all">
+                    D2 · Informatica
+                </button>
+                <button onclick="switchSubCategory('tpsit')" id="sub-btn-tpsit" class="sub-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-all">
+                    D3 · TPSIT
+                </button>
+                <button onclick="switchSubCategory('gestione')" id="sub-btn-gestione" class="sub-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-all">
+                    D4 · Gestione Progetto
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="discipline-grid">
+                <div id="card-sistemi" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">D1 · Sistemi e Reti</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Architettura di Rete e Gestione Server</h3>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium">
+                            Studio del modello Client-Server e configurazione di servizi essenziali su macchine Linux. Comprensione del routing, degli indirizzamenti IP e della gestione dei nodi per garantire la corretta comunicazione tra i dispositivi di una rete locale ed esterna.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="card-informatica" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-md">D2 · Informatica</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Programmazione e Gestione Basi di Dati</h3>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium">
+                            Sviluppo di applicazioni software strutturate tramite linguaggi di programmazione standard. Studio della logica algoritmica (strutture iterative e condizionali) e progettazione di database relazionali con l'utilizzo di query SQL per l'archiviazione sicura dei dati.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="card-tpsit" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-md">D3 · TPSIT</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Protocolli Internet e Sviluppo Web</h3>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium">
+                            Analisi dei protocolli della suite TCP/IP e programmazione lato client/server. Progettazione e implementazione di interfacce web responsive per consentire agli utenti di interagire in modo chiaro e interattivo con i servizi e le applicazioni sviluppate.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="card-gestione" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">D4 · Gestione Progetto</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Pianificazione, Tempi e Organizzazione del Lavoro</h3>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium">
+                            Studio delle fases del ciclo di vita di un software. Suddivisione delle attività e pianificazione temporale dello sviluppo mediante l'utilizzo dei Diagrammi di Gantt per monitorare le scadenze, coordinare il lavoro del team e analizzare i costi base del progetto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-sicurezza" class="tab-content hidden space-y-6">
+            <div class="pb-2">
+                <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
+                    Normative &amp; Prevenzione
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Sicurezza Postazioni e Laboratori (FSL)</h2>
+            </div>
+
+            <div class="glass-card p-5 rounded-3xl text-xs font-medium text-zinc-500 leading-relaxed">
+                Lo studio della sicurezza sul lavoro rappresenta il pilastro normativo dietro ogni attività tecnica. Integrando i principi del testo unico italiano (<strong class="text-zinc-900 font-semibold">D.Lgs. 81/08</strong>) con i moduli tecnici del percorso <strong class="text-zinc-900 font-semibold">Cisco IT Essentials</strong>, ho appreso le buone pratiche volte a preservare la salute dell'operatore e l'integrità dei dispositivi elettronici.
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="glass-card p-5 rounded-3xl space-y-3">
+                    <div class="w-8 h-8 bg-white border border-zinc-200 rounded-xl flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-bolt text-zinc-800 text-xs"></i>
+                    </div>
+                    <h4 class="font-bold text-zinc-900 text-xs">Prevenzione ESD</h4>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Prevenzione dei danni da scariche elettrostatiche sui componenti hardware interni mediante l'uso di bracciali e tappetini antistatici collegati a terra.</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl space-y-3">
+                    <div class="w-8 h-8 bg-white border border-zinc-200 rounded-xl flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-desktop text-zinc-800 text-xs"></i>
+                    </div>
+                    <h4 class="font-bold text-zinc-900 text-xs">Ergonomia e VDT</h4>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Regolazione della postura, corretta illuminazione e distanza dallo schermo per chi lavora ai videoterminali (VDT) al fine di ridurre l'affaticamento visivo e fisico.</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl space-y-3">
+                    <div class="w-8 h-8 bg-white border border-zinc-200 rounded-xl flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-power-off text-zinc-800 text-xs"></i>
+                    </div>
+                    <h4 class="font-bold text-zinc-900 text-xs">Rischio Elettrico</h4>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Isolamento rigoroso dei dispositivi dalle fonti di alimentazione prima di qualsiasi intervento di manutenzione, assemblaggio o pulizia dei circuiti hardware.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-civica" class="tab-content hidden space-y-6">
+            <div class="pb-2">
+                <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
+                    Agenda 2030
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Green IT: Soluzioni per la Sostenibilità Digitale</h2>
+            </div>
+
+            <div class="glass-card p-5 rounded-3xl text-xs font-medium text-zinc-500 leading-relaxed">
+                Il settore digitale e l'elaborazione dei dati richiedono enormi quantità di energia elettrica, impattando sulle emissioni globali di CO2. In linea con l'**Agenda 2030**, l'informatica deve adottare strategie mirate per mitigare questa impronta ecologica. Ecco i punti chiave su **come risolvere** e ridurre l'impatto ambientale delle tecnologie informatiche:
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="glass-card p-5 rounded-3xl space-y-2">
+                    <h3 class="text-xs font-bold text-zinc-900 flex items-center gap-2">
+                        <i class="fa-solid fa-code text-emerald-600"></i> Ottimizzazione Algoritmica del Codice
+                    </h3>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
+                        **Come risolvere:** Sviluppare software scrivendo codice efficiente e pulito. Ridurre la complessità computazionale di un algoritmo permette di diminuire drasticamente i cicli macchina richiesti alla CPU, traducendosi in un minor consumo immediato di energia elettrica da parte dei PC.
+                    </p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl space-y-2">
+                    <h3 class="text-xs font-bold text-zinc-900 flex items-center gap-2">
+                        <i class="fa-solid fa-server text-emerald-600"></i> Scelta di Infrastrutture Cloud Eco-Sostenibili
+                    </h3>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
+                        **Come risolvere:** Configurare o ospitare siti web e database esclusivamente presso provider e data center alimentati al 100% da fonti energetiche rinnovabili, che utilizzano sistemi avanzati di raffreddamento a basso impatto ambientale e a ridotto consumo idrico.
+                    </p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl space-y-2">
+                    <h3 class="text-xs font-bold text-zinc-900 flex items-center gap-2">
+                        <i class="fa-solid fa-microchip text-emerald-600"></i> Contrasto all'Obsolescenza e Riciclo RAEE
+                    </h3>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
+                        **Come risolvere:** Estendere la vita utile dell'hardware tramite riparazioni, upgrade mirati (es. espansione RAM o sostituzione con SSD) e manutenzione del sistema operativo. Al termine del ciclo di vita, smaltire correttamente i componenti elettronici tramite i canali RAEE per consentire il recupero delle materie prime.
+                    </p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl space-y-2">
+                    <h3 class="text-xs font-bold text-zinc-900 flex items-center gap-2">
+                        <i class="fa-solid fa-leaf text-emerald-600"></i> Architetture Decentralizzate e Locali
+                    </h3>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
+                        **Come risolvere:** Favorire, ove possibile, l'elaborazione dei dati ed l'esecuzione di piccoli applicativi direttamente sui dispositivi locali (Edge computing) invece di inviare flussi continui di informazioni sulla rete verso i server cloud, abbattendo così lo spreco energetico legato al traffico dati internet.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-orientamento" class="tab-content hidden space-y-6">
+            <div class="pb-2">
+                <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
+                    Evoluzione Post-Diploma
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Ingegneria Energetica e Sviluppo Futuro</h2>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl space-y-2">
+                <h3 class="text-sm font-bold text-zinc-900">Connessione logica: dall'Informatica alla Gestione dell'Energia</h3>
+                <p class="text-xs text-zinc-500 leading-relaxed font-medium">
+                    Il percorso di studi in Informatica ha strutturato la mia attitudine logica nell'affrontare problemi complessi e nell'analizzare flussi di dati strutturati. L'obiettivo dell'orientamento in uscita è applicare questa esatta forma mentis nel settore dell'**Ingegneria Energetica**, dove la transizione ecologica e i moderni impianti richiedono una forte integrazione tra hardware, monitoraggio software e algoritmi di automazione per una distribution intelligente dell'energia.
+                </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl space-y-4">
+                <h4 class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Roadmap Accademica e Professionale Progettata</h4>
+                <div class="space-y-4 border-l border-zinc-200 ml-2 pl-4 text-xs font-medium">
+                    <div class="relative">
+                        <span class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-zinc-900 ring-4 ring-zinc-100"></span>
+                        <div class="font-bold text-zinc-900">Giugno 2026 — Conseguimento del Diploma Tecnico</div>
+                        <p class="text-[11px] text-zinc-400 mt-0.5">Consolidamento delle competenze logiche, algoritmiche e sistemistiche maturate nel quinquennio.</p>
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-zinc-400 ring-4 ring-zinc-100"></span>
+                        <div class="font-bold text-zinc-800">Fase Accademica — Laurea in Ingegneria Energetica</div>
+                        <p class="text-[11px] text-zinc-400 mt-0.5">Studio dei principi di fisica tecnica, termodinamica e impianti di conversione da fonti rinnovabili.</p>
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-zinc-300 ring-4 ring-zinc-100"></span>
+                        <div class="font-bold text-zinc-700">Traguardo Futuro — Smart Grids e Sistemi Intelligenti</div>
+                        <p class="text-[11px] text-zinc-400 mt-0.5">Sviluppo di reti elettriche intelligenti dove l'informatica di base e il monitoraggio software ottimizzano in tempo reale i consumi del territorio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-ollama" class="tab-content hidden space-y-6">
+            <div class="flex items-center justify-between pb-2">
+                <div>
+                    <span class="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/50">
+                        <i class="fa-solid fa-microchip"></i> Sistemi &amp; Reti
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Edge LLM in Locale</h2>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs bg-zinc-900 text-zinc-100 px-3 py-1.5 rounded-full font-semibold shadow-md">
+                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> Llama 3 Offline
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl overflow-hidden flex flex-col max-w-3xl mx-auto border border-white/90 shadow-md">
+                <div class="p-3 bg-white/60 border-b border-zinc-200/40 flex justify-between items-center px-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                        <div class="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
+                        <div class="w-2.5 h-2.5 bg-green-400 rounded-full"></div>
+                        <span class="text-[11px] font-mono font-bold text-zinc-500 ml-2">ollama run llama3:8b</span>
+                    </div>
+                    <span class="text-[10px] font-mono text-zinc-400 font-bold tracking-wide"><i class="fa-solid fa-bolt text-amber-500"></i> ~42 TOK/S</span>
+                </div>
+                
+                <div class="p-5 overflow-y-auto space-y-4 text-xs font-medium bg-zinc-50/20 min-h-[180px]">
+                    <div class="flex gap-3 max-w-[85%]">
+                        <div class="w-7 h-7 rounded-xl bg-white border border-zinc-200 flex items-center justify-center shrink-0 font-bold text-[10px] text-zinc-400 shadow-sm">TU</div>
+                        <div class="bg-white/90 border border-zinc-200/60 p-3 rounded-2xl rounded-tl-none text-zinc-700 shadow-sm leading-relaxed">
+                            Spiega brevemente il vantaggio principale di un'architettura AI decentralizzata (Edge).
+                        </div>
+                    </div>
+                    <div class="flex gap-3 max-w-[85%] ml-auto flex-row-reverse">
+                        <div class="w-7 h-7 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0 font-bold text-[10px] text-white shadow-md">AI</div>
+                        <div class="bg-zinc-900 text-zinc-100 p-3 rounded-2xl rounded-tr-none shadow-md leading-relaxed font-mono text-[11px]">
+                            L'esecuzione offline elimina la latenza di rete e i costi del cloud, garantendo la privacy assoluta dei dati. I pesi vengono ottimizzati tramite quantizzazione (es. <span class="text-cyan-400 font-bold">Q4_K_M</span>) per girare interamente sulla VRAM della GPU locale.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/40 border-t border-zinc-200/40 px-4 flex items-center justify-between text-zinc-400 text-xs">
+                    <span>Chiedi a Llama3 in locale...</span>
+                    <i class="fa-solid fa-paper-plane text-zinc-400 text-[11px]"></i>
+                </div>
+            </div>
+
+            <div class="border-t border-zinc-200/60 pt-6 mt-4">
+                <div class="glass-card p-5 rounded-3xl border-l-4 border-l-zinc-900 max-w-3xl mx-auto space-y-3">
+                    <h3 class="text-xs font-bold text-zinc-900 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-zinc-600"></i> Setup &amp; Ottimizzazione Hardware
+                    </h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed font-medium">
+                        Il progetto si concentra sul deploy del demone <code class="bg-zinc-100 font-mono text-[10px] px-1 py-0.5 rounded text-zinc-800">ollama</code> su Linux Ubuntu. L'ottimizzazione elimina i colli di bottiglia hardware agendo sulla calibrazione firmware a basso livello della scheda madre: profili **XMP**, **Above 4G Decoding** e **Resizable BAR** abilitati massimizzano lo scambio dati sul bus PCIe.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        /* ──────── CAMBIO DEI TAB PRINCIPALI ──────── */
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(s => {
+                s.classList.add('hidden');
+                s.classList.remove('tab-in');
+            });
+
+            const target = document.getElementById('sec-' + tabId);
+            target.classList.remove('hidden');
+            void target.offsetWidth; 
+            target.classList.add('tab-in');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active-btn');
+            });
+
+            document.getElementById('btn-' + tabId).classList.add('active-btn');
+
+            if (tabId === 'curriculum') {
+                setTimeout(animateSkillBars, 50);
+                if (!window._radarReady) {
+                    setTimeout(initRadar, 80);
+                    window._radarReady = true;
+                }
+            }
+        }
+
+        /* ──────── DISCIPLINE: SOTTO-CATEGORIE FLUIDE E NITIDE ──────── */
+        function switchSubCategory(catId) {
+            document.querySelectorAll('.sub-tab-btn').forEach(btn => {
+                btn.classList.remove('active-sub-btn');
+            });
+            document.getElementById('sub-btn-' + catId).classList.add('active-sub-btn');
+
+            const cards = document.querySelectorAll('.subtab-card');
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(6px)';
+            });
+
+            setTimeout(() => {
+                cards.forEach(card => {
+                    if (catId === 'all' || card.id === 'card-' + catId) {
+                        card.style.display = 'flex';
+                        void card.offsetWidth;
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }, 180);
+        }
+
+        /* ──────── ANIMAZIONE DELLE SKILL BARS ──────── */
+        function animateSkillBars() {
+            document.querySelectorAll('.skill-bar').forEach(bar => {
+                bar.style.width = (bar.dataset.width || 0) + '%';
+            });
+        }
+
+        /* ──────── GRAFICO RADAR (CHART.JS) ──────── */
+        let _radar = null;
+        function initRadar() {
+            const el = document.getElementById('skillChart');
+            if (!el) return;
+            if (_radar) _radar.destroy();
+            _radar = new Chart(el.getContext('2d'), {
+                type: 'radar',
+                data: {
+                    labels: ['Informatica Base', 'Sistemi & Reti', 'TPSIT Web', 'Gestione Progetto', 'Sicurezza FSL'],
+                    datasets: [{
+                        data: [85, 80, 75, 70, 90],
+                        backgroundColor: 'rgba(24, 24, 27, 0.01)',
+                        borderColor: '#18181b',
+                        pointBackgroundColor: '#18181b',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 1.5,
+                        pointRadius: 4,
+                        borderWidth: 1.5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0, max: 100,
+                            grid: { color: 'rgba(0, 0, 0, 0.03)' },
+                            angleLines: { color: 'rgba(0, 0, 0, 0.03)' },
+                            pointLabels: { color: '#71717a', font: { family: 'Plus Jakarta Sans', size: 9, weight: '600' } },
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(animateSkillBars, 50);
+            initRadar();
+            window._radarReady = true;
+        });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        document.querySelectorAll('.glass-card').forEach(el=>el.classList.add('reveal'));
+        const obs=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.05});
+        document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+        // Spostamento delicato dei blob di sfondo al movimento del mouse (effetto fluido globale)
+        document.addEventListener('mousemove',e=>{
+            const x=(e.clientX/window.innerWidth-.5)*12;
+            const y=(e.clientY/window.innerHeight-.5)*12;
+            document.querySelectorAll('.blob').forEach((b,i)=>{
+                b.style.transform=`translate(${x*(i+1)}px,${y*(i+1)}px)`;
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>
