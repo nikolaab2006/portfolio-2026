@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esame di Stato 2026 | Portfolio</title>
+    <title>Esame di Stato 2026 | Nikola Salvatore Abbate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,7 +32,7 @@
         }
         .tab-in { animation: smoothFadeSlide 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
 
-        /* VETROMORFISMO OTTIMIZZATO (Nitido e Antialiased - NO BLUR AL PASSAGGIO DEL MOUSE) */
+        /* VETROMORFISMO OTTIMIZZATO */
         .glass-card {
             background: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(12px) saturate(130%);
@@ -47,7 +47,6 @@
             transform: translateZ(0);
         }
 
-        /* Sollevamento 2D Premium cristallino */
         .glass-card:hover {
             transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.85);
@@ -101,8 +100,8 @@
                         <i class="fa-solid fa-terminal text-white text-xs"></i>
                     </div>
                     <div>
-                        <h1 class="text-xs font-bold text-zinc-900 tracking-tight leading-tight">Esame di Stato 2026</h1>
-                        <p class="text-[10px] text-zinc-400 mt-0.5 font-medium">Portfolio Competenze</p>
+                        <h1 class="text-xs font-bold text-zinc-900 tracking-tight leading-tight">Nikola S. Abbate</h1>
+                        <p class="text-[10px] text-zinc-400 mt-0.5 font-medium">Esame di Stato 2026</p>
                     </div>
                 </div>
             </div>
@@ -119,9 +118,14 @@
                     <span>Le 4 Discipline Core</span>
                 </button>
 
+                <button onclick="switchTab('pcto')" id="btn-pcto" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
+                    <i class="fa-solid fa-briefcase text-[12px]"></i>
+                    <span>Esperienze PCTO</span>
+                </button>
+
                 <button onclick="switchTab('sicurezza')" id="btn-sicurezza" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
                     <i class="fa-solid fa-shield-halved text-[12px]"></i>
-                    <span>Sicurezza Laboratori</span>
+                    <span>Sicurezza &amp; Cisco</span>
                 </button>
 
                 <button onclick="switchTab('civica')" id="btn-civica" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
@@ -136,19 +140,20 @@
 
                 <button onclick="switchTab('ollama')" id="btn-ollama" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-zinc-500 hover:text-zinc-900 font-semibold text-xs transition-all border border-transparent">
                     <i class="fa-solid fa-brain text-[12px]"></i>
-                    <span>Integrazione AI (Ollama)</span>
+                    <span>Edge AI (VRAM locale)</span>
                 </button>
             </nav>
         </div>
 
         <div class="mt-6 pt-4 border-t border-zinc-200/50 space-y-0.5 px-1">
             <p class="text-[11px] text-zinc-800 font-bold">I.I.S. Don Geremia Piscopo</p>
-            <p class="text-[10px] text-zinc-400 font-medium">A.S. 2025/2026 · Informatica</p>
+            <p class="text-[10px] text-zinc-400 font-medium">Arzano (NA) · A.S. 2025/2026</p>
         </div>
     </aside>
 
     <main class="flex-1 bg-white/20 backdrop-blur-xl border border-white/40 rounded-3xl p-5 md:p-8 overflow-y-auto md:h-[calc(100vh-2rem)] shadow-sm">
 
+        <!-- PROFILO FORMATIVO -->
         <section id="sec-curriculum" class="tab-content space-y-6">
             <div class="pb-2">
                 <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
@@ -161,29 +166,34 @@
                 <div class="lg:col-span-2 glass-card p-6 rounded-3xl flex flex-col justify-between space-y-4">
                     <div class="space-y-3">
                         <div class="w-10 h-10 bg-zinc-900 rounded-2xl flex items-center justify-center shadow-sm">
-                            <i class="fa-solid fa-user-graduate text-white text-sm"></i>
+                            <i class="fa-solid fa-id-card text-white text-sm"></i>
                         </div>
                         <div>
-                            <h3 class="text-sm font-bold text-zinc-900 leading-tight">Candidato Diplomando</h3>
-                            <p class="text-[10px] text-zinc-400 mt-0.5 font-medium">Indirizzo: Informatica e Telecomunicazioni</p>
+                            <h3 class="text-sm font-bold text-zinc-900 leading-tight">Nikola Salvatore Abbate</h3>
+                            <p class="text-[10px] text-zinc-400 mt-0.5 font-medium">Nato a Landshut il 12/05/2006 | Residente a Cervia (RA)</p>
                         </div>
                         <p class="text-xs text-zinc-500 leading-relaxed font-medium">
-                            Sintesi del percorso scolastico incentrato sullo studio degli algoritmi, lo sviluppo di software applicativi, la gestione di reti locali e la progettazione di database relazionali nel corso del triennio specialistico.
+                            Studente all'ultimo anno dell'indirizzo Informatica e Telecomunicazioni (EQF 4). Percorso accademico focalizzato sull'amministrazione di reti, l'Internet of Things (IoT), lo sviluppo software e la cybersecurity.
                         </p>
                     </div>
                     <div class="space-y-2 pt-4 border-t border-zinc-200/60 text-[10px] font-semibold text-zinc-500">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-code text-zinc-400"></i>Programmazione e Logica Algoritmica</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-database text-zinc-400"></i>Progettazione Basi di Dati (SQL)</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-network-wired text-zinc-400"></i>Reti Locali e Protocolli Internet</div>
+                        <div class="flex justify-between items-center">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-language text-zinc-400"></i>Inglese Specialistico</span>
+                            <span class="bg-zinc-100 text-zinc-800 font-bold px-1.5 py-0.5 rounded text-[9px]">Livello B2</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-zinc-400"></i>Crediti Scolastici Maturati</span>
+                            <span class="bg-zinc-900 text-white font-bold px-1.5 py-0.5 rounded text-[9px]">30 / 30</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-3 glass-card p-6 rounded-3xl space-y-5 justify-center flex flex-col">
-                    <h3 class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">Padronanza delle Aree di Studio</h3>
+                    <h3 class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">Padronanza delle Aree Core</h3>
 
                     <div class="space-y-1.5">
                         <div class="flex justify-between text-xs font-semibold text-zinc-700">
-                            <span>Sviluppo Software &amp; Algoritmi (Informatica)</span>
+                            <span>Sviluppo Software &amp; Logica Algoritmica (C++, Java, Python)</span>
                             <span class="text-zinc-400 text-[10px]">85%</span>
                         </div>
                         <div class="w-full bg-zinc-200/40 h-2 rounded-full overflow-hidden p-[2px]">
@@ -193,7 +203,7 @@
 
                     <div class="space-y-1.5">
                         <div class="flex justify-between text-xs font-semibold text-zinc-700">
-                            <span>Reti, Sistemi e Configurazione Servizi (Sistemi)</span>
+                            <span>Reti, Sistemi e Architetture Server (Linux/Windows)</span>
                             <span class="text-zinc-400 text-[10px]">80%</span>
                         </div>
                         <div class="w-full bg-zinc-200/40 h-2 rounded-full overflow-hidden p-[2px]">
@@ -203,7 +213,7 @@
 
                     <div class="space-y-1.5">
                         <div class="flex justify-between text-xs font-semibold text-zinc-700">
-                            <span>Progettazione e Sviluppo Web (TPSIT)</span>
+                            <span>Infrastrutture IoT e Protocolli Web (TPSIT)</span>
                             <span class="text-zinc-400 text-[10px]">75%</span>
                         </div>
                         <div class="w-full bg-zinc-200/40 h-2 rounded-full overflow-hidden p-[2px]">
@@ -221,6 +231,7 @@
             </div>
         </section>
 
+        <!-- LE 4 DISCIPLINE CORE -->
         <section id="sec-discipline" class="tab-content hidden space-y-6">
             <div class="pb-2">
                 <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
@@ -250,85 +261,151 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="discipline-grid">
                 <div id="card-sistemi" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
                     <div class="space-y-2">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">D1 · Sistemi e Reti</span>
-                        <h3 class="text-sm font-bold text-zinc-900">Architettura di Rete e Gestione Server</h3>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">D1 · Sistemi e Reti (396 Ore)</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Architettura di Rete, Routing e Sistemi Operativi</h3>
                         <p class="text-xs text-zinc-500 leading-relaxed font-medium">
-                            Studio del modello Client-Server e configurazione di servizi essenziali su macchine Linux. Comprensione del routing, degli indirizzamenti IP e della gestione dei nodi per garantire la corretta comunicazione tra i dispositivi di una rete locale ed esterna.
+                            Studio del modello Client-Server e dei protocolli di instradamento. Configurazione avanzata e troubleshooting di reti locali (LAN), allocazione degli indirizzamenti IP e gestione di ambienti di rete basati su piattaforme sia Windows che Linux.
                         </p>
                     </div>
                 </div>
 
                 <div id="card-informatica" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
                     <div class="space-y-2">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-md">D2 · Informatica</span>
-                        <h3 class="text-sm font-bold text-zinc-900">Programmazione e Gestione Basi di Dati</h3>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-md">D2 · Informatica (594 Ore)</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Programmazione Strutturata e Database Relazionali</h3>
                         <p class="text-xs text-zinc-500 leading-relaxed font-medium">
-                            Sviluppo di applicazioni software strutturate tramite linguaggi di programmazione standard. Studio della logica algoritmica (strutture iterative e condizionali) e progettazione di database relazionali con l'utilizzo di query SQL per l'archiviazione sicura dei dati.
+                            Sviluppo software e ingegnerizzazione degli algoritmi tramite linguaggi di alto livello (C++, Java, Python). Progettazione concettuale, logica e fisica di basi di dati complesse con implementazione di architetture di interrogazione e manipolazione sicura in linguaggio SQL.
                         </p>
                     </div>
                 </div>
 
                 <div id="card-tpsit" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
                     <div class="space-y-2">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-md">D3 · TPSIT</span>
-                        <h3 class="text-sm font-bold text-zinc-900">Protocolli Internet e Sviluppo Web</h3>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded-md">D3 · TPSIT (330 Ore)</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Protocolli TCP/IP, Servizi di Rete e Sistemi IoT</h3>
                         <p class="text-xs text-zinc-500 leading-relaxed font-medium">
-                            Analisi dei protocolli della suite TCP/IP e programmazione lato client/server. Progettazione e implementazione di interfacce web responsive per consentire agli utenti di interagire in modo chiaro e interattivo con i servizi e le applicazioni sviluppate.
+                            Analisi dei protocolli della suite internet e programmazione web client/server. Focus specifico sulle tecnologie Internet of Things (IoT), finalizzato alla progettazione di sistemi intelligenti integrati basati sull'interconnessione hardware di sensori e attuatori.
                         </p>
                     </div>
                 </div>
 
                 <div id="card-gestione" class="subtab-card glass-card p-5 rounded-3xl flex flex-col justify-between space-y-4">
                     <div class="space-y-2">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">D4 · Gestione Progetto</span>
-                        <h4>Pianificazione, Tempi e Organizzazione del Lavoro</h4>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">D4 · Gestione Progetto (99 Ore)</span>
+                        <h3 class="text-sm font-bold text-zinc-900">Organizzazione d'Impresa e Ciclo di Vita del Software</h3>
                         <p class="text-xs text-zinc-500 leading-relaxed font-medium">
-                            Studio delle fases del ciclo di vita di un software. Suddivisione delle attività e pianificazione temporale dello sviluppo mediante l'utilizzo dei Diagrammi di Gantt per monitorare le scadenze, coordinare il lavoro del team e analizzare i costi base del progetto.
+                            Analisi dei modelli di pianificazione per lo sviluppo di sistemi informativi. Applicazione delle metodologie di Project Management per il monitoraggio dei tempi, l'analisi dei costi e la strutturazione del team-working in conformità agli standard aziendali di qualità.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sec-sicurezza" class="tab-content hidden space-y-6">
+        <!-- ESPERIENZE PCTO -->
+        <section id="sec-pcto" class="tab-content hidden space-y-6">
             <div class="pb-2">
                 <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
-                    Normative &amp; Prevenzione
+                    Esperienze sul Campo
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Sicurezza Postazioni e Laboratori (FSL)</h2>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Percorsi per le Competenze Trasversali (PCTO)</h2>
             </div>
 
-            <div class="glass-card p-5 rounded-3xl text-xs font-medium text-zinc-500 leading-relaxed">
-                Lo studio della sicurezza sul lavoro rappresenta il pilastro normativo dietro ogni attività tecnica. Integrando i principi del testo unico italiano (<strong class="text-zinc-900 font-semibold">D.Lgs. 81/08</strong>) con i moduli tecnici del percorso <strong class="text-zinc-900 font-semibold">Cisco IT Essentials</strong>, ho appreso le buone pratiche volte a preservare la salute dell'operatore e l'integrità dei dispositivi elettronici.
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="glass-card p-5 rounded-3xl space-y-3">
-                    <div class="w-8 h-8 bg-white border border-zinc-200 rounded-xl flex items-center justify-center shadow-sm">
-                        <i class="fa-solid fa-bolt text-zinc-800 text-xs"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="glass-card p-5 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-sm font-bold text-zinc-900">Consorzio Clara</h3>
+                            <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded-md text-[10px]">180 Ore Totali</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 font-semibold">Sviluppato nei periodi formativi 2023 - 2026</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium pt-2">
+                            La più estesa experience extra-scolastica in ambiente aziendale operativo. Ha permesso di assimilare e consolidare dinamiche gerarchiche reali, metodologie di collaborazione interna e la gestione strutturata dei workflow in team.
+                        </p>
                     </div>
-                    <h4 class="font-bold text-zinc-900 text-xs">Prevenzione ESD</h4>
-                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Prevenzione dei danni da scariche elettrostatiche sui componenti hardware interni mediante l'uso di bracciali e tappetini antistatici collegati a terra.</p>
                 </div>
 
-                <div class="glass-card p-5 rounded-3xl space-y-3">
-                    <div class="w-8 h-8 bg-white border border-zinc-200 rounded-xl flex items-center justify-center shadow-sm">
-                        <i class="fa-solid fa-desktop text-zinc-800 text-xs"></i>
+                <div class="glass-card p-5 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-sm font-bold text-zinc-900">C.S.F. Centro Servizi e Formazione</h3>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2 py-0.5 rounded-md text-[10px]">80 Ore</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 font-semibold">Anno Scolastico 2025/2026</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium pt-2">
+                            Attività realizzate direttamente in ambiente di lavoro esterno, focalizzate sull'applicazione pratica delle competenze d'indirizzo e sulla comprensione dei processi organizzativi interni dei comparti di consulenza tecnica.
+                        </p>
                     </div>
-                    <h4 class="font-bold text-zinc-900 text-xs">Ergonomia e VDT</h4>
-                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Regolazione della postura, corretta illuminazione e distanza dallo schermo per chi lavora ai videoterminali (VDT) al fine di ridurre l'affaticamento visivo e fisico.</p>
                 </div>
 
-                <div class="glass-card p-5 rounded-3xl space-y-3">
-                    <div class="w-8 h-8 bg-white border border-zinc-200 rounded-xl flex items-center justify-center shadow-sm">
-                        <i class="fa-solid fa-power-off text-zinc-800 text-xs"></i>
+                <div class="glass-card p-5 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-sm font-bold text-zinc-900">Formazione IIS Don Geremia Piscopo</h3>
+                            <span class="bg-zinc-100 text-zinc-800 font-bold px-2 py-0.5 rounded-md text-[10px]">60 Ore</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 font-semibold">Laboratori Interni (2022 - 2025)</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium pt-2">
+                            Moduli didattici applicati comprendenti 30 ore di Impresa Formativa Simulata (IFS) condotte a scuola e 30 ore ripartite in attività laboratoriali di Information and Communications Technology (ICT) avanzata.
+                        </p>
                     </div>
-                    <h4 class="font-bold text-zinc-900 text-xs">Rischio Elettrico</h4>
-                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Isolamento rigoroso dei dispositivi dalle fonti di alimentazione prima di qualsiasi intervento di manutenzione, assemblaggio o pulizia dei circuiti hardware.</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-sm font-bold text-zinc-900">Insieme S.r.l. Impresa Sociale</h3>
+                            <span class="bg-amber-50 text-amber-700 font-bold px-2 py-0.5 rounded-md text-[10px]">10 Ore</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 font-semibold">Anno Scolastico 2022/2023</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed font-medium pt-2">
+                            Incontro preliminare di orientamento formativo teorico in aula, incentrato sui valori dell'etica professionale, della responsabilità sociale delle imprese e sulla sicurezza nei contesti lavorativi.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- SICUREZZA & CERTIFICAZIONI CISCO -->
+        <section id="sec-sicurezza" class="tab-content hidden space-y-6">
+            <div class="pb-2">
+                <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
+                    Normative &amp; Certificazioni
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Sicurezza nei Luoghi di Lavoro &amp; Competenze Cisco</h2>
+            </div>
+
+            <div class="glass-card p-5 rounded-3xl text-xs font-medium text-zinc-500 leading-relaxed">
+                La cultura della prevenzione e dell'affidabilità tecnica rappresenta il core del profilo. L'integrazione del quadro normativo nazionale (<strong class="text-zinc-900 font-semibold">D.Lgs. 81/08</strong>) con i percorsi certificativi industriali <strong class="text-zinc-900 font-semibold">Cisco Systems</strong> attesta la capacità di operare in sicurezza riducendo i rischi aziendali.
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="glass-card p-5 rounded-3xl space-y-3 border-t-2 border-zinc-900">
+                    <div class="w-8 h-8 bg-zinc-900 text-white rounded-xl flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-certificate text-xs"></i>
+                    </div>
+                    <h4 class="font-bold text-zinc-900 text-xs">Cisco CCST / IT Essentials</h4>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Validazione industriale per il supporto tecnico hardware, assemblaggio sicuro, protezione dai rischi elettrici e gestione delle procedure di manutenzione preventiva dei sistemi.</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl space-y-3 border-t-2 border-indigo-500">
+                    <div class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-network-wired text-xs"></i>
+                    </div>
+                    <h4 class="font-bold text-zinc-900 text-xs">Cisco IoT Certification</h4>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Competenze tecniche certificate nell'interconnessione sicura di dispositivi intelligenti, stesura dei sensori, analisi preliminare dei dati ai nodi ed eliminazione dei vettori di attacco hardware.</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-3xl space-y-3 border-t-2 border-amber-500">
+                    <div class="w-8 h-8 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-desktop text-xs"></i>
+                    </div>
+                    <h4 class="font-bold text-zinc-900 text-xs">Ergonomia &amp; VDT (81/08)</h4>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">Normative stringenti sull'esposizione ai videoterminali: prevenzione dei disturbi muscolo-scheletrici e dell'affaticamento visivo mediante corretta illuminazione e interruzioni programmate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCAZIONE CIVICA -->
         <section id="sec-civica" class="tab-content hidden space-y-6">
             <div class="pb-2">
                 <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
@@ -338,7 +415,7 @@
             </div>
 
             <div class="glass-card p-5 rounded-3xl text-xs font-medium text-zinc-500 leading-relaxed">
-                Il settore digitale richiede enormi quantità di energia. In linea con l'**Agenda 2030**, ecco i punti chiave su come ridurre l'impatto ambientale delle tecnologie informatiche:
+                Il fabbisogno energetico delle infrastrutture digitali globali è in continua crescita. In piena aderenza con gli obiettivi dell'**Agenda 2030**, il piano d'azione prevede la convergenza verso un'informatica eco-compatibile fondata su quattro cardini operativi:
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -347,7 +424,7 @@
                         <i class="fa-solid fa-code text-emerald-600"></i> Ottimizzazione Algoritmica del Codice
                     </h3>
                     <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
-                        Sviluppare software scrivendo codice efficiente. Ridurre la complessità computazionale di un algoritmo permette di diminuire i cicli macchina richiesti alla CPU, riducendo il consumo energetico del computer.
+                        Scrittura di codice efficiente e pulito. Ridurre la complessità computazionale $O(n)$ di un blocco logico consente di limitare i cicli di clock richiesti alla CPU, ottimizzando direttamente i consumi termici ed energetici del processore in fase di calcolo continuo.
                     </p>
                 </div>
 
@@ -356,7 +433,7 @@
                         <i class="fa-solid fa-server text-emerald-600"></i> Infrastrutture Cloud Eco-Sostenibili
                     </h3>
                     <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
-                        Configurare o ospitare siti web e database presso provider che utilizzano data center alimentati da fonti energetiche rinnovabili e sistemi avanzati di raffreddamento a basso impatto.
+                        Migrazione e deployment dei servizi web su data center a basso impatto ambientale. Utilizzo controllato delle risorse cloud per limitare l'over-provisioning dei server e appoggio a provider vincolati a fontes energetiche rinnovabili.
                     </p>
                 </div>
 
@@ -365,70 +442,72 @@
                         <i class="fa-solid fa-microchip text-emerald-600"></i> Contrasto all'Obsolescenza e Riciclo RAEE
                     </h3>
                     <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
-                        Estendere la vita dell'hardware tramite upgrade mirati (espansione RAM o SSD). Al termine del ciclo di vita, smaltire correttamente i componenti tramite i canali RAEE per il recupero delle materie prime.
+                        Estensione del ciclo di vita dell'hardware tramite modularità e upgrade mirati dei componenti (storage SSD, espansioni RAM). Corretto smaltimento finale tramite i consorzi RAEE per garantire il recupero di terre rare e metalli nobili.
                     </p>
                 </div>
 
                 <div class="glass-card p-5 rounded-3xl space-y-2">
                     <h3 class="text-xs font-bold text-zinc-900 flex items-center gap-2">
-                        <i class="fa-solid fa-leaf text-emerald-600"></i> Architetture Decentralizzate e Locali
+                        <i class="fa-solid fa-layer-group text-emerald-600"></i> Edge AI come Vettore Ecologico
                     </h3>
                     <p class="text-[11px] text-zinc-500 leading-relaxed font-medium">
-                        Favorire l'elaborazione dei dati direttamente sui dispositivi locali (Edge computing) invece di inviare flussi continui sulla rete internet, abbattendo lo spreco energetico legato al traffico dati globale.
+                        L'esecuzione dell'intelligenza artificiale direttamente sull'hardware locale elimina i massicci flussi di traffico dati da e verso le server farm remote, riducendo l'impatto sul consumo di rete delle dorsali internet globali.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- SVILUPPO POST DIPLOMA -->
         <section id="sec-orientamento" class="tab-content hidden space-y-6">
             <div class="pb-2">
                 <span class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-zinc-500 px-2.5 py-1 bg-white/80 border border-zinc-200/60 rounded-full shadow-sm">
                     Evoluzione Post-Diploma
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Ingegneria Energetica e Sviluppo Futuro</h2>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Ingegneria Energetica e Transizione Ecologica</h2>
             </div>
 
             <div class="glass-card p-6 rounded-3xl space-y-2">
-                <h3 class="text-sm font-bold text-zinc-900">Connessione logica: dall'Informatica alla Gestione dell'Energia</h3>
+                <h3 class="text-sm font-bold text-zinc-900">Il Ponte Logico: dall'Informatica alla Gestione dei Sistemi Energetici</h3>
                 <p class="text-xs text-zinc-500 leading-relaxed font-medium">
-                    Il percorso di studi in Informatica ha strutturato la mia attitudine logica nell'affrontare problemi complessi. L'obiettivo dell'orientamento in uscita è applicare questa esatta forma mentis nel settore dell'**Ingegneria Energetica**, dove la transizione ecologica richiede una forte integrazione tra monitoraggio software e algoritmi di automazione per una distribuzione intelligente dell'energia.
+                    La formazione in Informatica ha strutturato una solida capacità di scomposizione analitica dei problemi complessi. L'obiettivo dell'orientamento universitario in uscita è l'applicazione di questa esatta forma mentis nell'**Ingegneria Energetica**, dove l'ottimizzazione dell'efficienza richiede l'integrazione di software gestionali e architetture IoT per il controllo automatico degli impianti di generazione da fonti rinnovabili.
                 </p>
             </div>
 
             <div class="glass-card p-6 rounded-3xl space-y-4">
-                <h4 class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Roadmap Accademica e Professionale Progettata</h4>
+                <h4 class="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Roadmap di Sviluppo Accademico</h4>
                 <div class="space-y-4 border-l border-zinc-200 ml-2 pl-4 text-xs font-medium">
                     <div class="relative">
                         <span class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-zinc-900 ring-4 ring-zinc-100"></span>
-                        <div class="font-bold text-zinc-900">Giugno 2026 — Conseguimento del Diploma Tecnico</div>
-                        <p class="text-[11px] text-zinc-400 mt-0.5">Consolidamento delle competenze logiche, algoritmiche e sistemistiche maturate nel quinquennio.</p>
+                        <div class="font-bold text-zinc-900">Giugno 2026 -- Diploma di Istruzione Tecnica</div>
+                        <p class="text-[11px] text-zinc-400 mt-0.5">Conseguimento della maturità tecnica presso l'I.I.S. Don Geremia Piscopo, consolidando le competenze di programmazione e sistemistica.</p>
                     </div>
 
                     <div class="relative">
                         <span class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-zinc-400 ring-4 ring-zinc-100"></span>
-                        <div class="font-bold text-zinc-800">Fase Accademica — Laurea in Ingegneria Energetica</div>
-                        <p class="text-[11px] text-zinc-400 mt-0.5">Studio dei principi di fisica tecnica, termodinamica e impianti di conversione da fontes rinnovabili.</p>
+                        <div class="font-bold text-zinc-800">Fase Accademica -- Percorso Universitario in Ingegneria Energetica</div>
+                        <p class="text-[11px] text-zinc-400 mt-0.5">Studio approfondito della termodinamica applicata, della fisica tecnica e della progettazione di sistemi di conversione dell'energia pulita.</p>
                     </div>
 
                     <div class="relative">
                         <span class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-zinc-300 ring-4 ring-zinc-100"></span>
-                        <div class="font-bold text-zinc-700">Traguardo Futuro — Smart Grids e Sistemi Intelligenti</div>
-                        <p class="text-[11px] text-zinc-400 mt-0.5">Sviluppo di reti elettriche intelligenti dove l'informatica di base e il monitoraggio software ottimizzano in tempo reale i consumi del territorio.</p>
+                        <div class="font-bold text-zinc-700">Integrazione Futura -- Smart Grids e Automazione Industriale</div>
+                        <p class="text-[11px] text-zinc-400 mt-0.5">Sviluppo di reti intelligenti di distribuzione energetica, dove algoritmi software predittivi e sensori IoT gestiscono la domanda e l'offerta in tempo reale.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- INTEGRAZIONE AI (OLLAMA) -->
         <section id="sec-ollama" class="tab-content hidden space-y-6">
             <div class="flex items-center justify-between pb-2">
                 <div>
                     <span class="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/50">
-                        <i class="fa-solid fa-microchip"></i> Sistemi &amp; Reti
+                        <i class="fa-solid fa-microchip"></i> Architetture Locali / Edge
                     </span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Edge LLM in Locale</h2>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight text-zinc-950">Deploy Offline di Modelli Linguistici (LLM)</h2>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs bg-zinc-900 text-zinc-100 px-3 py-1.5 rounded-full font-semibold shadow-md">
-                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> Llama 3 Offline
+                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> Ollama Live Hardware
                 </div>
             </div>
 
@@ -438,39 +517,39 @@
                         <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
                         <div class="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
                         <div class="w-2.5 h-2.5 bg-green-400 rounded-full"></div>
-                        <span class="text-[11px] font-mono font-bold text-zinc-500 ml-2">ollama run llama3:8b</span>
+                        <span class="text-[11px] font-mono font-bold text-zinc-500 ml-2">ollama run llama3 @ Ubuntu LTS</span>
                     </div>
-                    <span class="text-[10px] font-mono text-zinc-400 font-bold tracking-wide"><i class="fa-solid fa-bolt text-amber-500"></i> ~42 TOK/S</span>
+                    <span class="text-[10px] font-mono text-zinc-400 font-bold tracking-wide"><i class="fa-solid fa-microchip text-indigo-500"></i> RTX 5060 Ti Dedicated</span>
                 </div>
                 
                 <div class="p-5 overflow-y-auto space-y-4 text-xs font-medium bg-zinc-50/20 min-h-[180px]">
                     <div class="flex gap-3 max-w-[85%]">
                         <div class="w-7 h-7 rounded-xl bg-white border border-zinc-200 flex items-center justify-center shrink-0 font-bold text-[10px] text-zinc-400 shadow-sm">TU</div>
                         <div class="bg-white/90 border border-zinc-200/60 p-3 rounded-2xl rounded-tl-none text-zinc-700 shadow-sm leading-relaxed">
-                            Spiega brevemente il vantaggio principale di un'architettura AI decentralizzata (Edge).
+                            Nikola, qual è l'ottimizzazione chiave nell'esecuzione di un LLM a livello locale su Linux?
                         </div>
                     </div>
                     <div class="flex gap-3 max-w-[85%] ml-auto flex-row-reverse">
                         <div class="w-7 h-7 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0 font-bold text-[10px] text-white shadow-md">AI</div>
                         <div class="bg-zinc-900 text-zinc-100 p-3 rounded-2xl rounded-tr-none shadow-md leading-relaxed font-mono text-[11px]">
-                            L'esecuzione offline elimina la latenza di rete e i costi del server, garantendo la privacy dei dati. I file del modello vengono eseguiti interamente sulla memoria della scheda video (VRAM) locale.
+                            L'ottimizzazione risiede nell'allocazione completa del modello all'interno della VRAM dedicata della scheda video (NVIDIA RTX 5060 Ti). Questo azzera i colli di bottiglia del bus PCIe e della RAM del sistema, sfruttando i Tensor Core per massimizzare i token al secondo (TK/S) in assenza totale di rete.
                         </div>
                     </div>
                 </div>
 
                 <div class="p-3 bg-white/40 border-t border-zinc-200/40 px-4 flex items-center justify-between text-zinc-400 text-xs">
-                    <span>Chiedi a Llama3 in locale...</span>
-                    <i class="fa-solid fa-paper-plane text-zinc-400 text-[11px]"></i>
+                    <span>Interrogazione offline del modello quantizzato...</span>
+                    <i class="fa-solid fa-microchip text-zinc-400 text-[11px]"></i>
                 </div>
             </div>
 
             <div class="border-t border-zinc-200/60 pt-6 mt-4">
                 <div class="glass-card p-5 rounded-3xl border-l-4 border-l-zinc-900 max-w-3xl mx-auto space-y-3">
                     <h3 class="text-xs font-bold text-zinc-900 flex items-center gap-2">
-                        <i class="fa-solid fa-sliders text-zinc-600"></i> Setup e Configurazione di Base
+                        <i class="fa-solid fa-sliders text-zinc-600"></i> Setup e Configurazione dell'Ambiente Linux
                     </h3>
                     <p class="text-xs text-zinc-500 leading-relaxed font-medium">
-                        Il progetto si concentra sul deploy dell'applicazione <code class="bg-zinc-100 font-mono text-[10px] px-1 py-0.5 rounded text-zinc-800">ollama</code> su sistema operativo Linux. L'ottimizzazione permette lo scambio efficiente dei dati tra CPU, memoria RAM e scheda video hardware per garantire risposte immediate in totale assenza di connessione internet.
+                        Il progetto dimostra il deploy autonomo dell'ecosistema open-source <code class="bg-zinc-100 font-mono text-[10px] px-1 py-0.5 rounded text-zinc-800">ollama</code> in ambiente Ubuntu. Abilitando i driver proprietari NVIDIA, l'architettura sfrutta appieno l'hardware accelerato per compiti di inferenza locale, garantendo la totale confidenzialità dei dati sensibili e l'indipendenza da API commerciali di terze parti.
                     </p>
                 </div>
             </div>
@@ -546,7 +625,7 @@
             _radar = new Chart(el.getContext('2d'), {
                 type: 'radar',
                 data: {
-                    labels: ['Informatica Base', 'Sistemi & Reti', 'TPSIT Web', 'Gestione Progetto', 'Sicurezza FSL'],
+                    labels: ['Sviluppo Software', 'Sistemi e Reti', 'Protocolli IoT', 'Gestione Progetto', 'Sicurezza & Cisco'],
                     datasets: [{
                         data: [85, 80, 75, 70, 90],
                         backgroundColor: 'rgba(24, 24, 27, 0.01)',
